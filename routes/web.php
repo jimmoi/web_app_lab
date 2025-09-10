@@ -2,7 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\gardenController;
-
+use App\Http\Controllers\PlantController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,4 +27,5 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
     Route::get('/garden', [gardenController::class,'index']);
+    Route::get('/plants', [PlantController::class,'index']);
 });
