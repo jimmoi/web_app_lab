@@ -67,20 +67,19 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 
 
 
-git clone https://github.com/your-username/your-project-name.git
-cd your-project-name
-composer install
-npm install
-php artisan key:generate
-
-
-DB_CONNECTION=mysql
-DB_HOST=127.0.0.1
-DB_PORT=3306
-DB_DATABASE=your's_db_name // Need to create a new database
-DB_USERNAME=root
-DB_PASSWORD=
-
-php artisan migrate
-php artisan storage:link
-php artisan serve
+git clone https://github.com/your-username/your-project-name.git<br>
+cd your-project-name<br>
+composer install<br>
+npm install<br>
+php artisan key:generate<br>
+<br><br><br>
+DB_CONNECTION=mysql<br>
+DB_HOST=127.0.0.1<br>
+DB_PORT=3306<br>
+DB_DATABASE=your's_db_name // Need to create a new database<br>
+DB_USERNAME=root<br>
+DB_PASSWORD=<br>
+<br><br><br>
+php artisan migrate<br>
+php artisan storage:link<br>
+php artisan serve<br>
