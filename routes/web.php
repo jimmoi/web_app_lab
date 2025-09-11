@@ -27,5 +27,7 @@ Route::middleware([
         return view('dashboard');
     })->name('dashboard');
     Route::get('/garden', [gardenController::class,'index']);
-    Route::get('/plants', [PlantController::class,'index']);
+    Route::get('/plants', [PlantController::class,'index'])->name("plant_list_page");
+    Route::get('/plants/create', [PlantController::class,'showform'])->name("add_plant_page");
+    Route::post('/plants/create', [PlantController::class,'addPlant'])->name("add_plant");
 });
