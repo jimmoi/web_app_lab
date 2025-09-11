@@ -64,3 +64,23 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+
+
+git clone https://github.com/your-username/your-project-name.git
+cd your-project-name
+composer install
+npm install
+php artisan key:generate
+
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=your's_db_name // Need to create a new database
+DB_USERNAME=root
+DB_PASSWORD=
+
+php artisan migrate
+php artisan storage:link
+php artisan serve
