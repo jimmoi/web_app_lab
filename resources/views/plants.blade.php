@@ -9,7 +9,7 @@
     </style>
 </head>
 <body>
-    <h1>List of Plants</h1>
+    <h1 id="list_plant_header">List of Plants</h1>
         <p><a href="{{route('add_plant_page')}}">Add Plant</a></p>
         <table border = 1>
             <tr>
@@ -17,21 +17,24 @@
                 <th>Plant Name</th>
                 <th>Scientific Name</th>
                 <th> Garden Name</th>
+                <th>Action</th>
             </tr>
             <?php
             if (isset($plant_data)) {
                 $count = 1;
                 foreach ($plant_data as $data) {
+                    $plant_id = $data->id;
                     $plant_name = $data->plant_name;
                     $scientific_name = $data->scientific_name;
                     $garden_name = $data->garden->garden_name;
+                    $target_url = route('plants.form', $plant_id);
                     echo
                     "<tr>
                         <td>{$count}</td>
                         <td>{$plant_name}</td>
                         <td>{$scientific_name}</td>
                         <td>{$garden_name}</td>
-                    </tr>";
+                        <td><a href={$target_url}>Edit</a></td></tr>";
 
                     $count += 1;
                 }

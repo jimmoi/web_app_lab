@@ -16,7 +16,8 @@ class PlantController extends Controller
 
     public function showform() {
         $garden_data = Garden::all();
-        return view("createPlant", compact("garden_data"));
+        $form_mode = "create";
+        return view("createPlant", compact("garden_data", "form_mode"));
     }
 
     public function addPlant(Request $request) {
@@ -25,6 +26,22 @@ class PlantController extends Controller
         $new_plant->scientific_name = $request->sci_name;
         $new_plant->garden_id = $request->garden_id;
         $new_plant->save();
+        return redirect(route("plant_list_page"));
+    }
+
+    public function editform($plant_id) {
+        $garden_data = Garden::all();
+        $edit_row = Plant::find($plant_id);
+        $form_mode = "edit";
+        return view("createPlant", compact("garden_data", "edit_row", "form_mode", "plant_id"));
+    }
+
+    public function editPlant(Request $request) {
+        $edit_row = Plant::find($request->plant_id);
+        $edit_row->plant_name = $request->plant_name;
+        $edit_row->scientific_name = $request->sci_name;
+        $edit_row->garden_id = $request->garden_id;
+        $edit_row->save();
         return redirect(route("plant_list_page"));
     }
 }
