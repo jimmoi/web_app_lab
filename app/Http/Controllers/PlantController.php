@@ -44,4 +44,9 @@ class PlantController extends Controller
         $edit_row->save();
         return redirect(route("plant_list_page"));
     }
+
+    public function destroy(Request $request) {
+        Plant::destroy($request->plant_id);
+        return redirect(route("plant_list_page"));
+    }
 }

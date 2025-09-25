@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 11, 2025 at 05:49 AM
+-- Generation Time: Sep 25, 2025 at 10:10 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.1.25
 
@@ -165,11 +165,14 @@ CREATE TABLE `plants` (
 --
 
 INSERT INTO `plants` (`id`, `plant_name`, `scientific_name`, `garden_id`, `created_at`, `updated_at`) VALUES
-(1, 'Rose', 'Rosa indica', '1', NULL, NULL),
+(1, 'ZRose', 'Rosa indica', '1', NULL, '2025-09-18 02:14:00'),
 (2, 'Lotus', 'Nelumbo nucifera', '2', NULL, NULL),
 (3, 'Orchid', 'Orchidaceae', '1', NULL, NULL),
 (4, 'Cactus', 'Cactaceae', '3', NULL, NULL),
-(5, 'Sunflower', 'Helianthus annuus', '4', NULL, NULL);
+(5, 'Sunflower', 'Helianthus annuus', '4', NULL, NULL),
+(18, 'Bamboo', 'Bambusoideae', '1', '2025-09-11 01:56:49', '2025-09-11 01:56:49'),
+(19, 'A', 'B', '2', '2025-09-11 01:57:41', '2025-09-11 01:57:41'),
+(20, 'C', 'D', '2', '2025-09-11 02:06:37', '2025-09-11 02:06:37');
 
 -- --------------------------------------------------------
 
@@ -191,7 +194,8 @@ CREATE TABLE `sessions` (
 --
 
 INSERT INTO `sessions` (`id`, `user_id`, `ip_address`, `user_agent`, `payload`, `last_activity`) VALUES
-('fOhgHvgIe5W52IpnjXDdu3VqV7vq74Knua3wkaBe', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiaTBTZjFFVnVkRlRwWHhGZkpEUFl4NXVCYXV0SmJtUXhEWjd1bmdzaSI7czo2OiJfZmxhc2giO2E6Mjp7czozOiJvbGQiO2E6MDp7fXM6MzoibmV3IjthOjA6e319czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6Mjg6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMC9wbGFudHMiO31zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO3M6MjE6InBhc3N3b3JkX2hhc2hfc2FuY3R1bSI7czo2MDoiJDJ5JDEyJG1MdU91aFVUakhOSkpFT2NVR0hxUHVTaGpUNVc4UDNVbHczNFZ6TTBhZHpRUEtVUnk0ZC5hIjt9', 1757527161);
+('nb72XN2ZmWvYhzhlRbKDVQaF9HOOeqWXuntLMn84', 1, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0', 'YTo1OntzOjY6Il90b2tlbiI7czo0MDoiMVJuR2FvcWRQNE92MTVyQ3JFa3FOcHpDT0pHbjVLUXZFVTY1cTI2aiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MzE6Imh0dHA6Ly9sb2NhbGhvc3Q6ODAwMC9wbGFudHMvMjAiO31zOjY6Il9mbGFzaCI7YToyOntzOjM6Im9sZCI7YTowOnt9czozOiJuZXciO2E6MDp7fX1zOjUwOiJsb2dpbl93ZWJfNTliYTM2YWRkYzJiMmY5NDAxNTgwZjAxNGM3ZjU4ZWE0ZTMwOTg5ZCI7aToxO3M6MjE6InBhc3N3b3JkX2hhc2hfc2FuY3R1bSI7czo2MDoiJDJ5JDEyJG1MdU91aFVUakhOSkpFT2NVR0hxUHVTaGpUNVc4UDNVbHczNFZ6TTBhZHpRUEtVUnk0ZC5hIjt9', 1758775641),
+('Vq7wpnlTWOLOz8vuRq7sYChGjdZjyY9SrnA1rhP5', NULL, '127.0.0.1', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36 Edg/140.0.0.0', 'YTozOntzOjY6Il90b2tlbiI7czo0MDoiUHRJUWV1dzRheE5TQW4ycWhqU2lwVk1QbHJRbGt6V3FDbzQxYnFpTiI7czo5OiJfcHJldmlvdXMiO2E6MTp7czozOiJ1cmwiO3M6MjE6Imh0dHA6Ly8xMjcuMC4wLjE6ODAwMCI7fXM6NjoiX2ZsYXNoIjthOjI6e3M6Mzoib2xkIjthOjA6e31zOjM6Im5ldyI7YTowOnt9fX0=', 1758774035);
 
 -- --------------------------------------------------------
 
@@ -324,7 +328,7 @@ ALTER TABLE `personal_access_tokens`
 -- AUTO_INCREMENT for table `plants`
 --
 ALTER TABLE `plants`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT for table `users`
